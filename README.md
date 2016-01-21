@@ -1,13 +1,14 @@
-# Command Line Data Wrangling
+# Trabajando con datos desde la línea de comandos
 
-Wrangling data using only (unix) shell commands.
+Original de [https://github.com/rgrp](Rufus Pollock) [https://github.com/rgrp/command-line-data-wrangling](Command Line Data Wrangling)
 
-The focus is on plain text and CSV (interpreted broadly in that the C(omma) can
-be any other kind of delimiter)!
+Algunos comandos de Unix que pueden utilizarse para trabajar con datos en la shell.
 
-## Tools of the trade
+Se centra en datos guardados en texto plano y CSV, aunque no tiene que utilizar obligatoriamente la *coma* como delimitador exclusivamente.
 
-* cut = filter columns
+## Herramientas
+
+* cut = para filtrar columnas
 * sed = replace (and much more)
 * grep = filter rows
 * sort = sort!
@@ -16,23 +17,24 @@ be any other kind of delimiter)!
 * wc = count lines or "words"
 * split = split a file into pieces (less useful)
 
-The limitation of most shell utilities for CSV is that:
+La principal limitación de la mayoría de las utilidades para CSV es que:
 
-* they are fundamentally line oriented
-* they are limited to a fairly naive approach to delimiters
+- Se orientan a líneas
+- Se limitan a un enfoque bastante ingenuo de delimitadores
 
-If your CSVs are well behaved and do not:
+Si los CSVs están bien formados y:
 
-* include line terminators within fields (which is allowed by CSV!)
-* have delimiter occurring with values (e.g. having , appear in a field value -
-  again this is very allowed as long as field value is quoted)
+- No incluyen finalizadores de línea entre campos, algo que se permite en CSV
+- No incluyen delimitadores en los valores, lo cual se permite si está entrecomillado
 
-Then there is no problem. If your CSVs are not like this it is still possible
-these tools will be useful but you will have to be more careful.
+Entonces no hay problemas al usar estas herramientas.
 
-## Key Concepts
+Si eso no es así, podrás usar las herramientas pero tendrás que ser cuidadoso al obtener los resultados.
 
-Pipes! One of the great (computing design) ideas of all time:
+
+## Conceptos clave
+
+Tuberías, una de las más grandes ideas del diseño de programación de todos los tiempos
 
 > 1. We should have some ways of coupling programs like garden hose--screw in
 > another segment when it becomes when it becomes necessary to massage data in
